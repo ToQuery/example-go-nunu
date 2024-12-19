@@ -4,6 +4,7 @@ import (
 	apiV1 "example-nunu/api/v1"
 	"example-nunu/internal/service"
 	"github.com/gin-gonic/gin"
+	"time"
 )
 
 type TqAppHandler struct {
@@ -21,9 +22,14 @@ func NewTqAppHandler(
 	}
 }
 
-func (h *TqAppHandler) GetTqApp(ctx *gin.Context) {
-	apiV1.HandleSuccess(ctx, map[string]interface{}{
+func (h *TqAppHandler) TqAppIndex(ctx *gin.Context) {
+	info := map[string]interface{}{
 		"0x00": "Hello World!",
 		":)":   "Thank you for using nunu!",
+		"time": time.Now(),
+	}
+	apiV1.HandleSuccess(ctx, apiV1.AppIndex{
+		Name: "App Index",
+		Info: info,
 	})
 }

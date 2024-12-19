@@ -1,13 +1,11 @@
 package service
 
 import (
-	"context"
-	"example-nunu/internal/model"
 	"example-nunu/internal/repository"
 )
 
 type TqAppService interface {
-	GetTqApp(ctx context.Context, id int64) (*model.TqApp, error)
+	//GetTqApp(ctx context.Context, id int64) (*model.TqApp, error)
 }
 
 func NewTqAppService(
@@ -25,6 +23,6 @@ type tqAppService struct {
 	tqAppRepository repository.TqAppRepository
 }
 
-func (s *tqAppService) GetTqApp(ctx context.Context, id int64) (*model.TqApp, error) {
-	return s.tqAppRepository.GetTqApp(ctx, id)
-}
+//func (s *tqAppService) GetTqApp(ctx context.Context, id int64) (*model.TqApp, error) {
+//	return s.tqAppRepository.GetTqApp(ctx, id)
+//}

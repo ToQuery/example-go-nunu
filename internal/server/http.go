@@ -19,7 +19,7 @@ func NewHTTPServer(
 	conf *viper.Viper,
 	jwt *jwt.JWT,
 	userHandler *handler.UserHandler,
-	tqAppHandler handler.TqAppHandler,
+	tqAppHandler *handler.TqAppHandler,
 ) *http.Server {
 	gin.SetMode(gin.DebugMode)
 	s := http.NewServer(
@@ -54,9 +54,9 @@ func NewHTTPServer(
 
 	v1 := s.Group("/v1")
 	{
-		appRouter := v1.Group("/app").Use(middleware.ResponseEncryptHandlerMiddleware(logger, conf))
+		appRouter := v1.Group("/app") // .Use(middleware.ResponseEncryptHandlerMiddleware(logger, conf))
 		{
-			appRouter.GET("", tqAppHandler.GetTqApp)
+			appRouter.GET("/index", tqAppHandler.TqAppIndex)
 		}
 
 		// No route group has permission

@@ -7,9 +7,13 @@
 package wire
 
 import (
+	"example-nunu/internal/repository"
 	"example-nunu/internal/server"
+	"example-nunu/internal/service"
 	"example-nunu/pkg/app"
+	"example-nunu/pkg/jwt"
 	"example-nunu/pkg/log"
+	"example-nunu/pkg/sid"
 	"github.com/google/wire"
 	"github.com/spf13/viper"
 )
@@ -17,13 +21,25 @@ import (
 // Injectors from wire.go:
 
 func NewWire(viperViper *viper.Viper, logger *log.Logger) (*app.App, func(), error) {
-	task := server.NewTask(logger)
+	db := repository.NewDB(viperViper, logger)
+	repositoryRepository := repository.NewRepository(logger, db)
+	transaction := repository.NewTransaction(repositoryRepository)
+	sidSid := sid.NewSid()
+	jwtJWT := jwt.NewJwt(viperViper)
+	serviceService := service.NewService(transaction, logger, sidSid, jwtJWT)
+	tqAppRepository := repository.NewTqAppRepository(repositoryRepository)
+	tqAppService := service.NewTqAppService(serviceService, tqAppRepository)
+	task := server.NewTask(logger, tqAppService)
 	appApp := newApp(task)
 	return appApp, func() {
 	}, nil
 }
 
 // wire.go:
+
+var repositorySet = wire.NewSet(repository.NewDB, repository.NewRepository, repository.NewTransaction, repository.NewUserRepository, repository.NewTqAppRepository, repository.NewTqDeveloperRepository)
+
+var serviceSet = wire.NewSet(service.NewService, service.NewUserService, service.NewTqAppService, service.NewTqDeveloperService)
 
 var serverSet = wire.NewSet(server.NewTask)
 

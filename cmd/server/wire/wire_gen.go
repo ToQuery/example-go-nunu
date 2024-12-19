@@ -33,12 +33,12 @@ func NewWire(viperViper *viper.Viper, logger *log.Logger) (*app.App, func(), err
 	userRepository := repository.NewUserRepository(repositoryRepository)
 	userService := service.NewUserService(serviceService, userRepository)
 	userHandler := handler.NewUserHandler(handlerHandler, userService)
-	httpServer := server.NewHTTPServer(logger, viperViper, jwtJWT, userHandler)
 	tqAppRepository := repository.NewTqAppRepository(repositoryRepository)
 	tqAppService := service.NewTqAppService(serviceService, tqAppRepository)
-	job := server.NewJob(logger, tqAppService)
-	task := server.NewTask(logger, tqAppService)
-	appApp := newApp(httpServer, job, task)
+	tqAppHandler := handler.NewTqAppHandler(handlerHandler, tqAppService)
+	httpServer := server.NewHTTPServer(logger, viperViper, jwtJWT, userHandler, tqAppHandler)
+	job := server.NewJob(logger)
+	appApp := newApp(httpServer, job)
 	return appApp, func() {
 	}, nil
 }
@@ -51,13 +51,12 @@ var serviceSet = wire.NewSet(service.NewService, service.NewUserService, service
 
 var handlerSet = wire.NewSet(handler.NewHandler, handler.NewUserHandler, handler.NewTqAppHandler, handler.NewTqDeveloperHandler)
 
-var serverSet = wire.NewSet(server.NewHTTPServer, server.NewJob, server.NewTask)
+var serverSet = wire.NewSet(server.NewHTTPServer, server.NewJob)
 
 // build App
 func newApp(
 	httpServer *http.Server,
 	job *server.Job,
-	task *server.Task,
 ) *app.App {
-	return app.NewApp(app.WithServer(httpServer, job, task), app.WithName("example-nunu"))
+	return app.NewApp(app.WithServer(httpServer, job), app.WithName("example-nunu"))
 }

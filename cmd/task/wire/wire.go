@@ -8,7 +8,9 @@ import (
 	"example-nunu/internal/server"
 	"example-nunu/internal/service"
 	"example-nunu/pkg/app"
+	"example-nunu/pkg/jwt"
 	"example-nunu/pkg/log"
+	"example-nunu/pkg/sid"
 	"github.com/google/wire"
 	"github.com/spf13/viper"
 )
@@ -18,14 +20,14 @@ var repositorySet = wire.NewSet(
 	//repository.NewRedis,
 	repository.NewRepository,
 	repository.NewTransaction,
-	//repository.NewUserRepository,
+	repository.NewUserRepository,
 	repository.NewTqAppRepository,
 	repository.NewTqDeveloperRepository,
 )
 
 var serviceSet = wire.NewSet(
 	service.NewService,
-	//service.NewUserService,
+	service.NewUserService,
 	service.NewTqAppService,
 	service.NewTqDeveloperService,
 )
@@ -49,6 +51,8 @@ func NewWire(*viper.Viper, *log.Logger) (*app.App, func(), error) {
 		repositorySet,
 		serviceSet,
 		serverSet,
+		sid.NewSid,
+		jwt.NewJwt,
 		newApp,
 	))
 }
