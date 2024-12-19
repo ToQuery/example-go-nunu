@@ -2,10 +2,10 @@ package repository
 
 import (
 	"context"
+	"example-go-nunu/pkg/log"
+	"example-go-nunu/pkg/zapgorm2"
 	"fmt"
 	"github.com/glebarez/sqlite"
-	"example-nunu/pkg/log"
-	"example-nunu/pkg/zapgorm2"
 	"github.com/redis/go-redis/v9"
 	"github.com/spf13/viper"
 	"gorm.io/driver/mysql"

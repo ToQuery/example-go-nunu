@@ -1,10 +1,10 @@
 package middleware
 
 import (
+	v1 "example-go-nunu/api/v1"
+	"example-go-nunu/pkg/log"
 	"github.com/duke-git/lancet/v2/cryptor"
 	"github.com/gin-gonic/gin"
-	v1 "example-nunu/api/v1"
-	"example-nunu/pkg/log"
 	"github.com/spf13/viper"
 	"net/http"
 	"sort"

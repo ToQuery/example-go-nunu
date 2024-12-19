@@ -2,7 +2,7 @@ package app
 
 import (
 	"context"
-	"example-nunu/pkg/server"
+	"example-go-nunu/pkg/server"
 	"log"
 	"os"
 	"os/signal"

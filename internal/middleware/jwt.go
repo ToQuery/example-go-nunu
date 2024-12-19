@@ -1,10 +1,10 @@
 package middleware
 
 import (
+	"example-go-nunu/api/v1"
+	"example-go-nunu/pkg/jwt"
+	"example-go-nunu/pkg/log"
 	"github.com/gin-gonic/gin"
-	"example-nunu/api/v1"
-	"example-nunu/pkg/jwt"
-	"example-nunu/pkg/log"
 	"go.uber.org/zap"
 	"net/http"
 )

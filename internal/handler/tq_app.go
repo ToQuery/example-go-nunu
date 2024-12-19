@@ -1,8 +1,8 @@
 package handler
 
 import (
-	apiV1 "example-nunu/api/v1"
-	"example-nunu/internal/service"
+	apiV1 "example-go-nunu/api/v1"
+	"example-go-nunu/internal/service"
 	"github.com/gin-gonic/gin"
 	"time"
 )

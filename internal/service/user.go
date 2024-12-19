@@ -2,9 +2,9 @@ package service
 
 import (
 	"context"
-	v1 "example-nunu/api/v1"
-	"example-nunu/internal/model"
-	"example-nunu/internal/repository"
+	v1 "example-go-nunu/api/v1"
+	"example-go-nunu/internal/model"
+	"example-go-nunu/internal/repository"
 	"golang.org/x/crypto/bcrypt"
 	"time"
 )

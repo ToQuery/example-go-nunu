@@ -2,7 +2,7 @@ package server
 
 import (
 	"context"
-	"example-nunu/pkg/log"
+	"example-go-nunu/pkg/log"
 )
 
 type Job struct {

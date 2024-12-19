@@ -7,10 +7,10 @@
 package wire
 
 import (
-	"example-nunu/internal/repository"
-	"example-nunu/internal/server"
-	"example-nunu/pkg/app"
-	"example-nunu/pkg/log"
+	"example-go-nunu/internal/repository"
+	"example-go-nunu/internal/server"
+	"example-go-nunu/pkg/app"
+	"example-go-nunu/pkg/log"
 	"github.com/google/wire"
 	"github.com/spf13/viper"
 )

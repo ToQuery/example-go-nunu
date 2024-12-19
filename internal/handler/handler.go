@@ -1,9 +1,9 @@
 package handler
 
 import (
+	"example-go-nunu/pkg/jwt"
+	"example-go-nunu/pkg/log"
 	"github.com/gin-gonic/gin"
-	"example-nunu/pkg/jwt"
-	"example-nunu/pkg/log"
 )
 
 type Handler struct {

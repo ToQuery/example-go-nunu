@@ -3,13 +3,13 @@ package handler
 import (
 	"bytes"
 	"encoding/json"
+	v1 "example-go-nunu/api/v1"
+	"example-go-nunu/internal/handler"
+	"example-go-nunu/internal/middleware"
+	jwt2 "example-go-nunu/pkg/jwt"
+	"example-go-nunu/test/mocks/service"
 	"flag"
 	"fmt"
-	v1 "example-nunu/api/v1"
-	"example-nunu/internal/handler"
-	"example-nunu/internal/middleware"
-	jwt2 "example-nunu/pkg/jwt"
-	"example-nunu/test/mocks/service"
 	"time"
 
 	"net/http"
@@ -17,9 +17,9 @@ import (
 	"os"
 	"testing"
 
+	"example-go-nunu/pkg/config"
+	"example-go-nunu/pkg/log"
 	"github.com/gin-gonic/gin"
-	"example-nunu/pkg/config"
-	"example-nunu/pkg/log"
 	"github.com/golang/mock/gomock"
 	"github.com/stretchr/testify/assert"
 )

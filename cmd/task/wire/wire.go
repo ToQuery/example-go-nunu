@@ -4,13 +4,13 @@
 package wire
 
 import (
-	"example-nunu/internal/repository"
-	"example-nunu/internal/server"
-	"example-nunu/internal/service"
-	"example-nunu/pkg/app"
-	"example-nunu/pkg/jwt"
-	"example-nunu/pkg/log"
-	"example-nunu/pkg/sid"
+	"example-go-nunu/internal/repository"
+	"example-go-nunu/internal/server"
+	"example-go-nunu/internal/service"
+	"example-go-nunu/pkg/app"
+	"example-go-nunu/pkg/jwt"
+	"example-go-nunu/pkg/log"
+	"example-go-nunu/pkg/sid"
 	"github.com/google/wire"
 	"github.com/spf13/viper"
 )

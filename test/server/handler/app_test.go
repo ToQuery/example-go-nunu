@@ -1,9 +1,9 @@
 package handler
 
 import (
-	v1 "example-nunu/api/v1"
-	"example-nunu/internal/handler"
-	"example-nunu/test/mocks/service"
+	v1 "example-go-nunu/api/v1"
+	"example-go-nunu/internal/handler"
+	"example-go-nunu/test/mocks/service"
 	"net/http"
 	"testing"
 

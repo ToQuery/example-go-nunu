@@ -2,10 +2,10 @@ package main
 
 import (
 	"context"
+	"example-go-nunu/cmd/task/wire"
+	"example-go-nunu/pkg/config"
+	"example-go-nunu/pkg/log"
 	"flag"
-	"example-nunu/cmd/task/wire"
-	"example-nunu/pkg/config"
-	"example-nunu/pkg/log"
 )
 
 func main() {

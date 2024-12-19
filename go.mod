@@ -1,4 +1,4 @@
-module example-nunu
+module example-go-nunu
 
 go 1.19
 

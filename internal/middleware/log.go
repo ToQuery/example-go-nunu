@@ -2,10 +2,10 @@ package middleware
 
 import (
 	"bytes"
+	"example-go-nunu/pkg/log"
 	"github.com/duke-git/lancet/v2/cryptor"
 	"github.com/duke-git/lancet/v2/random"
 	"github.com/gin-gonic/gin"
-	"example-nunu/pkg/log"
 	"go.uber.org/zap"
 	"io"
 	"time"

@@ -2,8 +2,8 @@ package server
 
 import (
 	"context"
-	"example-nunu/internal/service"
-	"example-nunu/pkg/log"
+	"example-go-nunu/internal/service"
+	"example-go-nunu/pkg/log"
 	"github.com/go-co-op/gocron"
 	"go.uber.org/zap"
 	"time"

@@ -1,9 +1,9 @@
 package handler
 
 import (
+	"example-go-nunu/api/v1"
+	"example-go-nunu/internal/service"
 	"github.com/gin-gonic/gin"
-	"example-nunu/api/v1"
-	"example-nunu/internal/service"
 	"go.uber.org/zap"
 	"net/http"
 )

@@ -1,7 +1,7 @@
 package service
 
 import (
-	"example-nunu/internal/repository"
+	"example-go-nunu/internal/repository"
 )
 
 type TqAppService interface {

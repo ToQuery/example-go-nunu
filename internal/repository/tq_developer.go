@@ -2,7 +2,7 @@ package repository
 
 import (
 	"context"
-	"example-nunu/internal/model"
+	"example-go-nunu/internal/model"
 )
 
 type TqDeveloperRepository interface {

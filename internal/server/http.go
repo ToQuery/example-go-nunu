@@ -1,13 +1,13 @@
 package server
 
 import (
-	apiV1 "example-nunu/api/v1"
-	"example-nunu/docs"
-	"example-nunu/internal/handler"
-	"example-nunu/internal/middleware"
-	"example-nunu/pkg/jwt"
-	"example-nunu/pkg/log"
-	"example-nunu/pkg/server/http"
+	apiV1 "example-go-nunu/api/v1"
+	"example-go-nunu/docs"
+	"example-go-nunu/internal/handler"
+	"example-go-nunu/internal/middleware"
+	"example-go-nunu/pkg/jwt"
+	"example-go-nunu/pkg/log"
+	"example-go-nunu/pkg/server/http"
 	"github.com/gin-gonic/gin"
 	"github.com/spf13/viper"
 	swaggerfiles "github.com/swaggo/files"

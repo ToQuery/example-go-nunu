@@ -2,8 +2,8 @@ package service
 
 import (
 	"context"
-	"example-nunu/internal/model"
-	"example-nunu/internal/repository"
+	"example-go-nunu/internal/model"
+	"example-go-nunu/internal/repository"
 )
 
 type TqDeveloperService interface {

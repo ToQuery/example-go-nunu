@@ -1,10 +1,10 @@
 package service
 
 import (
-	"example-nunu/internal/repository"
-	"example-nunu/pkg/jwt"
-	"example-nunu/pkg/log"
-	"example-nunu/pkg/sid"
+	"example-go-nunu/internal/repository"
+	"example-go-nunu/pkg/jwt"
+	"example-go-nunu/pkg/log"
+	"example-go-nunu/pkg/sid"
 )
 
 type Service struct {

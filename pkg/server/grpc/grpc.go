@@ -2,8 +2,8 @@ package grpc
 
 import (
 	"context"
+	"example-go-nunu/pkg/log"
 	"fmt"
-	"example-nunu/pkg/log"
 	"google.golang.org/grpc"
 	"net"
 	"time"

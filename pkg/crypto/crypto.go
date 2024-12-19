@@ -13,7 +13,7 @@ import (
 	"encoding/json"
 	"encoding/pem"
 	"errors"
-	"example-nunu/pkg/log"
+	"example-go-nunu/pkg/log"
 	"fmt"
 	"github.com/spf13/viper"
 	"io"

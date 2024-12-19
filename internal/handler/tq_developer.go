@@ -1,7 +1,7 @@
 package handler
 
 import (
-	"example-nunu/internal/service"
+	"example-go-nunu/internal/service"
 	"github.com/gin-gonic/gin"
 )
 
